@@ -20,8 +20,16 @@ const productList = () => {
     // console.log("Product:",products)
     return (
         <div className="w-full" >
-            <h1>ProductLists</h1>
-            
+            <div className="mt-2 mb-4 text-center" >
+           <label htmlFor="filter">Sort Products By: </label>
+
+<select >
+  <option value="">Electronic</option>
+  <option value="">Prtice</option>
+  <option value="">Opel</option>
+  <option value="">Audi</option>
+</select>
+</div>     
             <div className="grid grid-cols-2 md:grid-cols-4 w-11/12 md:10/12 mx-auto gap-2" >
             <Product/>
            

@@ -1,8 +1,11 @@
 import {ActionTypes} from "../actionTypes/ActionTypes"
 
 const initialstate={
-    products:[]
+    products:[],
+    
+
 }
+
 
 
 export const ProductReducer=(state=initialstate,{type,payload})=>{
