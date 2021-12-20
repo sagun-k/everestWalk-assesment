@@ -1,12 +1,14 @@
 import React,{useState} from 'react'
 import { useSelector} from "react-redux"
 import {Link} from "react-router-dom"
+
 const ChcekOutBox = () => {
     const {totalQuantities,totalPrice}=useSelector((state)=>state.CartReducer)
     
     
     return (
         <>
+       
             <div className="bg-cyan-600 md:w-8/12  shadow-2xl w-11/12 mx-auto">
                 <div className="text-white p-4">
           <h1>totalQuantities:{totalQuantities}</h1>

@@ -19,7 +19,7 @@ const product = () => {
 
   return (
     <>
-      <div className="mt-2 mb-4 text-center">
+      <div className="  mb-4 text-center">
         <label htmlFor="filter">Sort Products By: </label>
         <select onSelect={handleClick} > 
           <option value="" selected>All</option>

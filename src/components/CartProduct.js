@@ -13,8 +13,7 @@ const CartProduct = () => {
              const pricewithoutDollar=product.price.slice(1,product.price.length)
              const priceInt=parseInt(pricewithoutDollar)
              const priceInRs=priceInt*119
-             const priceArray=[priceInRs]
-             console.log(priceArray.sort())
+             
              
              const [quantity, setQuantity]=useState(1)
              let initialstate=product.stock
@@ -47,8 +46,8 @@ const CartProduct = () => {
         
     </div>
     <div className=" w-full  flex ">
-        <div className="w-full disabled:opacity-10 bg-red-500 mx-1 ">
-          <button disabled={totalQuantities==1?true:false}  onClick={()=>{
+        <div className=" disabled:opacity-10 ">
+          <button className="border-2 border-gray-400"disabled={quantity==1?true:false}  onClick={()=>{
            dispatch({type:"DEC",payload:product.id})
            setQuantity(quantity-1)
            setStocks(stocks+1)
@@ -57,8 +56,8 @@ const CartProduct = () => {
         <div>
         <h1>Quantitiy:{quantity}</h1>
         </div>
-        <div className="mx-1 w-full  disabled:opacity-10 bg-green-600">
-            <button
+        <div className="   disabled:opacity-10 ">
+            <button className="border-2 border-gray-400"
              disabled={stocks==0?true:false}
             onClick={()=>{
                 dispatch({type:"INC",payload:product.id})

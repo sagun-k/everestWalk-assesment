@@ -18,7 +18,7 @@ const productList = () => {
     },[])
     return (
         <>
-        <div className="w-full mt-28 inline-block z-0" >
+        <div className="w-full mt-40  inline-block z-0" >
               
             <div className="grid grid-cols-2 md:grid-cols-4 w-11/12 md:10/12 mx-auto gap-2" >
             <Product/>
