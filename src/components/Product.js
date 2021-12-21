@@ -4,41 +4,29 @@ import { useSelector, useDispatch } from "react-redux";
 const product = () => {
   const products = useSelector((state) => state.ProductReducer.products);
   const dispatch = useDispatch();
-  console.log(products);
-  const laptopProducts = products.filter((product) => {
-    return product.category[1] === "laptop";
+
+  // const laptopProducts = products.filter((product) => {
+  //   return product.category[1] === "laptop";
     
-  });
-  const handleClick=()=>{
-     useEffect(()=>{
-     products=laptopProducts
-     },[])
-  }
-  console.log("Filtered array:", laptopProducts);
+  // });
+  
 
 
   return (
     <>
-      <div className="  mb-4 text-center">
-        <label htmlFor="filter">Sort Products By: </label>
-        <select onSelect={handleClick} > 
-          <option value="" selected>All</option>
-          <option value="" onClick={()=>{}} >Laptop</option>
-          <option value=""onClick={()=>{console.log("Clicekd Mobile")}}>Mobiile</option>
-        </select>
-      </div>
+     
       
    
       {products.map((product) => {
         const pricewithoutDollar = product.price.slice(1, product.price.length);
         const priceInt = parseInt(pricewithoutDollar);
         const priceInRs = priceInt * 119;
-        const priceArray=[priceInRs]
-        console.log(priceArray.sort())
+        // const priceArray=[priceInRs]
+        // console.log(priceArray.sort())
         var fetchDate = product.createDate;
         var today = new Date(fetchDate);
         var formatDate = today.toDateString();
-        console.log(formatDate);
+        // console.log(formatDate);
 
         return (
           <div key={product.id} className="mx-2">

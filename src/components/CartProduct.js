@@ -9,15 +9,17 @@ const CartProduct = () => {
 
  
     return (<>
-      {products.length>0? <> {products.map((product)=>{
+      {products.length>0? <> {
+      
+      products.map((product)=>{
              const pricewithoutDollar=product.price.slice(1,product.price.length)
              const priceInt=parseInt(pricewithoutDollar)
              const priceInRs=priceInt*119
              
              
-             const [quantity, setQuantity]=useState(1)
-             let initialstate=product.stock
-             const [stocks,setStocks]=useState(initialstate)
+             
+            //  let initialstate=product.stock
+            //  const [stocks,setStocks]=useState(initialstate)
           
             return(
                 <div key={product.id} className="mx-2" >
@@ -42,27 +44,27 @@ const CartProduct = () => {
         <h1>{product.category}</h1>
     </div>
     <div>
-        <h1 className="text-xs md:text-sm text-gray-700">Stock:{stocks}</h1>
+        <h1 className="text-xs md:text-sm text-gray-700">Stock:</h1>
         
     </div>
     <div className=" w-full  flex ">
         <div className=" disabled:opacity-10 ">
-          <button className="border-2 border-gray-400"disabled={quantity==1?true:false}  onClick={()=>{
+          <button className="border-2 border-gray-400" onClick={()=>{
            dispatch({type:"DEC",payload:product.id})
-           setQuantity(quantity-1)
-           setStocks(stocks+1)
+        //    setQuantity(quantity-1)
+        //    setStocks(stocks+1)
           }}  > - </button>
         </div>
         <div>
-        <h1>Quantitiy:{quantity}</h1>
+        <h1>Quantitiy</h1>
         </div>
         <div className="   disabled:opacity-10 ">
             <button className="border-2 border-gray-400"
-             disabled={stocks==0?true:false}
+             
             onClick={()=>{
                 dispatch({type:"INC",payload:product.id})
-                setQuantity(quantity+1)
-                setStocks(stocks-1)
+                // setQuantity(quantity+1)
+                // setStocks(stocks-1)
             }}
             >+</button>
         </div>

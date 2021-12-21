@@ -22,6 +22,8 @@ export const CartReducer=(state=initialstate,action)=>{
             let productPrice=product.price.slice(1,product.price.length)
             let productPriceInRs=parseInt(productPrice)*119
             const TotalPrice=state.totalPrice+productPriceInRs
+            let productquantity=product.stock-(product.stock-1)
+            console.log("Product quantiti",productquantity)
             console.log(TotalPrice)
             return {
                 ...state,products:[...state.products,product],
@@ -42,8 +44,11 @@ export const CartReducer=(state=initialstate,action)=>{
             ...state,products:filteredarray,totalQuantities:state.totalQuantities-1,totalPrice:state.totalPrice-findproductPriceInRs
           }
         case "INC":
+          
+         
           findProduct=state.products.find(product=>product.id === action.payload)
           const prodpriceInc=parseInt(findProduct.price.slice(1,findProduct.price.length))*119
+          console.log(findProduct.stock)
           return{
             ...state,totalQuantities:state.totalQuantities+1,totalPrice:state.totalPrice+prodpriceInc
           }

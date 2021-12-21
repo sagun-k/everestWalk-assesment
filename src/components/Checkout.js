@@ -205,6 +205,7 @@ const Checkout = () => {
                     </div>
                   </div>
                 </div>
+               
                 <div className="my-4">
                   <label className="text-md text-gray-700 font-semibold">
                     Delivery Address:

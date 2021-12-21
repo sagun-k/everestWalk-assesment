@@ -7,6 +7,12 @@ export const SetProduct=(products)=>{
         payload:products
     }
 }
+export const SetLaptop=(products)=>{
+    return{
+        type:ActionTypes.SET_LAPTOP,
+        payload:products
+    }
+}
 
 export const SelectedProduct=(product)=>{
     return{
