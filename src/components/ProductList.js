@@ -42,16 +42,10 @@ const productList = () => {
     
     }
     
-    if(useIt==true){
-     useEffect(()=>{
-        fetchProducts()
-        
-         
-     },[])}else{
-         useEffect(()=>{
-             filterFetch()
-         })
-     }
+   useEffect(()=>{
+       
+       fetchProducts()
+   },[])
     // useEffect(()=>{
     //   setData(allproducts)
     // //    fetchProducts()
